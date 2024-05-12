@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { ClientesModule } from './clientes/clientes.module';
-import { FormsModule } from '@angular/forms';
+import { ClientesService } from './clientes.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     TemplateModule,
     ClientesModule
   ],
-  providers: [],
+  providers: [
+    ClientesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
