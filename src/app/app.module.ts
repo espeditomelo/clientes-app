@@ -31,4 +31,5 @@ import { ServicoPrestadoService } from './servico-prestado.service'
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
