@@ -23,11 +23,48 @@
     </div>
     <br>
     <div class="row">
+
+      <div class="alert alert-warning" role="alert" *ngIf="mensagem">
+        {{ mensagem }}
+      </div>
+
       <div class="col-md-3">
         <button type="submit" class="btn btn-primary">
           <i class="fa fa-search"></i> Consultar
         </button>
+        <button type="button"
+          routerLink="/servico-prestado-form"
+          class="btn btn-warning ml-1">
+          <i class="fa fa-plus"></i> Novo
+        </button>
       </div>
     </div>
   </form>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of lista">
+            <td>{{ service.cliente.nome }}</td>
+            <td>{{ service.descricao }}</td>
+            <td>{{ service.valor }}</td>
+            <td>{{ service.data }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
 </div>
