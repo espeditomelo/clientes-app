@@ -28,10 +28,13 @@ export class ServicoPrestadoListaComponent implements OnInit {
     this.service.buscar(this.nome, this.mes)
       .subscribe(response => {  //callback
         this.lista = response;
+        this.nome = null;
+        this.mes = null;
         if(this.lista.length <= 0) {
           this.mensagem = "Nenhum registro encontrado.";
         } else {
           this.mensagem = null;
+
         }
       } );
   }
