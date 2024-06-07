@@ -10,12 +10,11 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  nomeUsuario: string;
+  username: string;
   senha: string;
-  erroLogin: boolean;
   cadastrando: boolean;
   mensagemSucesso: string;
-
+  errors: String[];
 
   constructor(
     private router: Router,
@@ -38,16 +37,16 @@ export class LoginComponent {
   cadastrar() {
     const usuario: Usuario = new Usuario();
     // usuario.nome = this.nomeUsuario;
-    usuario.username = this.nomeUsuario;
+    usuario.username = this.username;
     usuario.senha = this.senha;
     this.authService
       .salvar(usuario)
       .subscribe( response => {
-        this.erroLogin = false;
         this.mensagemSucesso = 'O cadastro foi realizado com sucesso. Efetue o login.';
-      }, error => {
-        this.erroLogin = true;
+        this.errors = null;
+      }, errorResponse => {
         this.mensagemSucesso = null;
+        this.errors = errorResponse.error.errors;
       })
   }
 
