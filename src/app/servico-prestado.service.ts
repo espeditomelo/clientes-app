@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../environments/environment'
 import { ServicoPrestadoBusca } from './servico-prestado/servico-prestado-lista/servicoPrestadoBusca';
-import { notEqual } from 'assert';
+//import { notEqual } from 'assert';
 
 @Injectable({
   providedIn: 'root'
