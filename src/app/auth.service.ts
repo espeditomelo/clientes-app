@@ -16,7 +16,10 @@ export class AuthService {
   tokenUrl: string = environment.apiURLBase + environment.obterTokenUrl;
   clientId: string = environment.clientId;
   clientSecret: string = environment.clientSecret;
+<<<<<<< HEAD
   jwtHelper: JwtHelperService = new JwtHelperService();
+=======
+>>>>>>> 1dcdac7f1cd9bb8d29296c174d6f1666514d70f5
 
   constructor(
     private http: HttpClient
